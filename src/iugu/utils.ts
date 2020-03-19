@@ -3,7 +3,8 @@ class IuguUtils {
     if (/[^0-9-\s]+/.test(value)) return false
 
     // The Luhn Algorithm. It's so pretty.
-    let nCheck = 0; let bEven = false
+    let nCheck = 0
+    let bEven = false
     value = value.replace(/\D/g, '')
 
     for (let n = value.length - 1; n >= 0; n--) {
@@ -16,20 +17,35 @@ class IuguUtils {
       bEven = !bEven
     }
 
-    return (nCheck % 10) === 0
+    return nCheck % 10 === 0
   }
 
   formatUUID (e: string): string {
     const t = e.toUpperCase().replace('-', '')
-    return t.substr(0, 8) + '-' + t.substr(8, 4) + '-' + t.substr(12, 4) + '-' + t.substr(16, 4) + '-' + t.substr(20, 12)
+    return (
+      t.substr(0, 8) +
+      '-' +
+      t.substr(8, 4) +
+      '-' +
+      t.substr(12, 4) +
+      '-' +
+      t.substr(16, 4) +
+      '-' +
+      t.substr(20, 12)
+    )
   }
 
   validateAccountID (accountID: string): boolean {
-    return /^[a-fA-F0-9]{8}[a-fA-F0-9]{4}[a-fA-F0-9]{4}[a-fA-F0-9]{4}[a-fA-F0-9]{12}$/.test(accountID)
+    return /^[a-fA-F0-9]{8}[a-fA-F0-9]{4}[a-fA-F0-9]{4}[a-fA-F0-9]{4}[a-fA-F0-9]{12}$/.test(
+      accountID
+    )
   }
 
   interpolateURL (url: string, data: Map<string, string>): string {
-    return url.replace(/\{([\s\S]+?)\}/g, function (substring: string, ...args: string[]): string {
+    return url.replace(/\{([\s\S]+?)\}/g, function (
+      substring: string,
+      ...args: string[]
+    ): string {
       return data.get(args[0]) || substring
     })
   }

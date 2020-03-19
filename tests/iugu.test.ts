@@ -1,8 +1,7 @@
-import Iugu, { IuguClient, IuguPaymentToken } from '../lib/iugu'
+import Iugu, { IuguClient, IuguPaymentToken } from '../src/iugu'
 
 import * as fs from 'fs'
 import * as path from 'path'
-import { stringLiteral } from '@babel/types'
 
 interface IuguServices {
   accountId: string;

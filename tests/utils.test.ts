@@ -1,5 +1,5 @@
 
-import { IuguUtils } from '../lib/iugu'
+import { IuguUtils } from '../src/iugu'
 
 test('test validateCreditCardNumber', () => {
   expect(IuguUtils.validateCreditCardNumber('5495 9849 8848 9270')).toBe(true)

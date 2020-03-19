@@ -106,11 +106,47 @@ export interface IuguInvoice {
   items?: IuguItem[];
   variables?: IuguVariable[];
   custom_variables?: any[];
-  logs?: any[];
   payer?: IuguPayer;
   commissions?: any;
   early_payment_discounts?: IuguPaymentDiscount[];
   early_payment_discount?: boolean;
+  total_paid_cents?: number;
+  taxes_paid_cents?: null;
+  paid_cents?: null;
+  cc_emails?: null;
+  financial_return_date?: null;
+  overpaid_cents?: null;
+  advance_fee_cents?: null;
+  order_id?: null;
+  customer_ref?: null;
+  customer_name?: null;
+  total_overpaid?: string;
+  fines_on_occurrence_day?: string;
+  total_on_occurrence_day?: string;
+  fines_on_occurrence_day_cents?: number;
+  total_on_occurrence_day_cents?: number;
+  advance_fee?: string;
+  paid?: string;
+  original_payment_id?: string;
+  double_payment_id?: string;
+  created_at_iso?: Date;
+  authorized_at?: string;
+  authorized_at_iso?: string;
+  expired_at?: string;
+  expired_at_iso?: string;
+  refunded_at?: string;
+  refunded_at_iso?: string;
+  canceled_at?: string;
+  canceled_at_iso?: string;
+  protested_at?: string;
+  protested_at_iso?: string;
+  chargeback_at?: string;
+  chargeback_at_iso?: string;
+  occurrence_date?: string;
+  transaction_number?: number;
+  payment_method?: string;
+  financial_return_dates?: string;
+  logs?: IuguLog[];
 }
 
 export interface IuguPayer {
@@ -159,4 +195,11 @@ export interface IuguVariable {
   id?: string;
   variable?: string;
   value?: string;
+}
+
+export interface IuguLog {
+  id?: string;
+  description?: string;
+  notes?: string;
+  created_at?: string;
 }

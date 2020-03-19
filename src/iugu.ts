@@ -12,6 +12,7 @@ import {
   IuguPaymentDiscount,
   IuguBankSlip,
   IuguPayer,
+  IuguLog,
   IuguAddress
 } from './iugu/models'
 import IuguUtils from './iugu/utils'
@@ -30,5 +31,6 @@ export {
   IuguPaymentDiscount,
   IuguItem,
   IuguVariable,
+  IuguLog,
   IuguUtils
 }

@@ -2,10 +2,12 @@
   "name": "iugu-node-sdk",
   "version": "0.0.1",
   "description": "Biblioteca da API Iugu para Node.js feita em Typescript",
-  "main": "src/iugu.ts",
+  "main": "lib/iugu.ts",
+  "types": "lib/iugu.ts",
   "scripts": {
     "test": "jest --no-cache --detectOpenHandles",
-    "doc": "npx typedoc --out ./docs --mode file ./src"
+    "doc": "npx typedoc --out ./docs --mode file ./lib",
+    "build": "npx tsc -p tsconfig.json"
   },
   "keywords": [],
   "author": {

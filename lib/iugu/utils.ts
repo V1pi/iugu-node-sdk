@@ -1,5 +1,3 @@
-import { IuguMethod } from './models'
-
 class IuguUtils {
   validateCreditCardNumber (value: string): boolean {
     if (/[^0-9-\s]+/.test(value)) return false

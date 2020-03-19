@@ -29,6 +29,7 @@ export interface IuguPaymentToken {
     id?: string;
     account_id: string;
     data: IuguCreditCard;
+    extra_info?: IuguCreditCardExtraInfo;
     method: string;
     test: boolean;
 }
@@ -45,6 +46,15 @@ export interface IuguCreditCard {
     holderName?: string;
     displayNumber?: string;
     bin?: string;
+}
+
+export interface IuguCreditCardExtraInfo {
+    brand?: string;
+    holderName?: string;
+    displayNumber?: string;
+    bin?: string;
+    month?: string;
+    year?: string;
 }
 
 export interface IuguMethod {

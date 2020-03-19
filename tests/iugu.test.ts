@@ -1,4 +1,4 @@
-import Iugu, { IuguClient, IuguPaymentToken } from '../src/iugu'
+import Iugu, { IuguClient, IuguPaymentToken, IuguInvoice } from '../src/iugu'
 
 import * as fs from 'fs'
 import * as path from 'path'
@@ -48,4 +48,28 @@ test('should create token', async () => {
   }
   const resultPayment = await Iugu.paymentToken.create(payment, undefined)
   expect(resultPayment.id).toBeDefined()
+})
+
+test('should create invoice', async () => {
+  const invoice: IuguInvoice = {
+    email: 'teste@teste.com',
+    due_date: '2020-03-19',
+    items: [
+      {
+        description: 'Alcool em gel',
+        quantity: 1,
+        price_cents: 30000
+      }
+    ],
+    payer: {
+      cpf_cnpj: '34737969052',
+      name: 'Vinicius Picanco',
+      address: {
+        zip_code: '36010070',
+        number: '125'
+      }
+    }
+  }
+  const resultInvoice = await Iugu.invoices.create(invoice, undefined)
+  expect(resultInvoice.id).toBeDefined()
 })

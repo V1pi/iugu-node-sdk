@@ -14,10 +14,7 @@ class IuguCustomers extends IuguCommon<IuguClient> {
     }
   }
 
-  async createPaymentMethod (
-    data: string | object,
-    urlParams: Map<string, string> | undefined
-  ): Promise<IuguPaymentMethod> {
+  async createPaymentMethod (data: string | object, urlParams: Map<string, string> | undefined): Promise<IuguPaymentMethod> {
     return IuguMethods.createIuguMethod<IuguPaymentMethod>({
       method: 'post',
       path: '/{customerId}/payment_methods',
@@ -25,10 +22,7 @@ class IuguCustomers extends IuguCommon<IuguClient> {
     })(data, urlParams)
   }
 
-  async listPaymentMethod (
-    data: string | object,
-    urlParams: Map<string, string> | undefined
-  ): Promise<IuguPaymentMethod> {
+  async listPaymentMethod (data: string | object, urlParams: Map<string, string> | undefined): Promise<IuguPaymentMethod> {
     return IuguMethods.createIuguMethod<IuguPaymentMethod>({
       method: 'get',
       path: '/{customerId}/payment_methods',
@@ -36,10 +30,7 @@ class IuguCustomers extends IuguCommon<IuguClient> {
     })(data, urlParams)
   }
 
-  async retrievePaymentMethod (
-    data: string | object,
-    urlParams: Map<string, string> | undefined
-  ): Promise<IuguPaymentMethod> {
+  async retrievePaymentMethod (data: string | object, urlParams: Map<string, string> | undefined): Promise<IuguPaymentMethod> {
     return IuguMethods.createIuguMethod<IuguPaymentMethod>({
       method: 'get',
       path: '/{customerId}/payment_methods/{paymentMethodId}',
@@ -47,10 +38,7 @@ class IuguCustomers extends IuguCommon<IuguClient> {
     })(data, urlParams)
   }
 
-  async updatePaymentMethod (
-    data: string | object,
-    urlParams: Map<string, string> | undefined
-  ): Promise<IuguPaymentMethod> {
+  async updatePaymentMethod (data: string | object, urlParams: Map<string, string> | undefined): Promise<IuguPaymentMethod> {
     return IuguMethods.createIuguMethod<IuguPaymentMethod>({
       method: 'post',
       path: '/{customerId}/payment_methods/{paymentMethodId}',
@@ -58,10 +46,7 @@ class IuguCustomers extends IuguCommon<IuguClient> {
     })(data, urlParams)
   }
 
-  async deletePaymentMethod (
-    data: string | object,
-    urlParams: Map<string, string> | undefined
-  ): Promise<IuguPaymentMethod> {
+  async deletePaymentMethod (data: string | object, urlParams: Map<string, string> | undefined): Promise<IuguPaymentMethod> {
     return IuguMethods.createIuguMethod<IuguPaymentMethod>({
       method: 'delete',
       path: '/{customerId}/payment_methods/{paymentMethodId}',

@@ -5,7 +5,14 @@ import {
   IuguPaymentToken,
   IuguCreditCard,
   IuguMethod,
-  IuguCreditCardExtraInfo
+  IuguCreditCardExtraInfo,
+  IuguInvoice,
+  IuguItem,
+  IuguVariable,
+  IuguPaymentDiscount,
+  IuguBankSlip,
+  IuguPayer,
+  IuguAddress
 } from './iugu/models'
 import IuguUtils from './iugu/utils'
 export default Iugu
@@ -14,7 +21,14 @@ export {
   IuguPaymentMethod,
   IuguPaymentToken,
   IuguCreditCard,
+  IuguAddress,
   IuguMethod,
   IuguCreditCardExtraInfo,
+  IuguInvoice,
+  IuguPayer,
+  IuguBankSlip,
+  IuguPaymentDiscount,
+  IuguItem,
+  IuguVariable,
   IuguUtils
 }

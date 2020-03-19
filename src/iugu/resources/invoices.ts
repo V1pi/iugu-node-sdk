@@ -6,16 +6,16 @@ class IuguInvoices extends IuguCommon<IuguInvoice> {
   async cancel (data: string | object, urlParams: Map<string, string> | undefined): Promise<IuguInvoice> {
     return IuguMethods.createIuguMethod<IuguInvoice>({
       method: 'put',
-      path: '{invoiceId}/cancel',
-      urlParams: ['invoiceId']
+      path: '/' + this.routeName + '/{invoice_id}/cancel',
+      urlParams: ['invoice_id']
     })(data, urlParams)
   }
 
   async refund (data: string | object, urlParams: Map<string, string> | undefined): Promise<IuguInvoice> {
     return IuguMethods.createIuguMethod<IuguInvoice>({
       method: 'post',
-      path: '{invoiceId}/refund',
-      urlParams: ['invoiceId']
+      path: '/' + this.routeName + '/{invoice_id}/refund',
+      urlParams: ['invoice_id']
     })(data, urlParams)
   }
 

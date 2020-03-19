@@ -63,7 +63,8 @@ Para o funcionamento dos testes crie um arquivo chamado _iugu\_services.json_ na
 {
     "accountId": "<SUA ACCOUNT ID>",
     "apiKey": "<API KEY PREFERENCIALMENTE DE TESTES>",
-    "clientId": "<UM CLIENT ID VÁLIDO>"
+    "clientId": "<UM CLIENT ID VÁLIDO>",
+    "paymentMethodToken": "<<UM TOKEN DE FORMA DE PAGAMENTO VÁLIDO>>"
 }
 ```
 

@@ -22,7 +22,13 @@ export interface IuguClient {
 }
 
 export interface IuguPaymentMethod {
-  teste: string;
+  id?: string;
+  description?: string;
+  token?: string;
+  set_as_default?: boolean;
+  item_type?: string;
+  customer_id?: string;
+  data?: IuguCreditCardExtraInfo;
 }
 
 export interface IuguPaymentToken {
@@ -55,6 +61,10 @@ export interface IuguCreditCardExtraInfo {
   bin?: string;
   month?: string;
   year?: string;
+  holder?: string;
+  last_digits?: string;
+  first_digits?: string;
+  masked_number?: string;
 }
 
 export interface IuguMethod {
@@ -111,15 +121,15 @@ export interface IuguInvoice {
   early_payment_discounts?: IuguPaymentDiscount[];
   early_payment_discount?: boolean;
   total_paid_cents?: number;
-  taxes_paid_cents?: null;
-  paid_cents?: null;
-  cc_emails?: null;
-  financial_return_date?: null;
-  overpaid_cents?: null;
-  advance_fee_cents?: null;
-  order_id?: null;
-  customer_ref?: null;
-  customer_name?: null;
+  taxes_paid_cents?: string;
+  paid_cents?: string;
+  cc_emails?: string;
+  financial_return_date?: string;
+  overpaid_cents?: string;
+  advance_fee_cents?: string;
+  order_id?: string;
+  customer_ref?: string;
+  customer_name?: string;
   total_overpaid?: string;
   fines_on_occurrence_day?: string;
   total_on_occurrence_day?: string;
@@ -202,4 +212,28 @@ export interface IuguLog {
   description?: string;
   notes?: string;
   created_at?: string;
+}
+
+export interface IuguCharge {
+  message?: string;
+  errors?: any;
+  success?: boolean;
+  url?: string;
+  pdf?: string;
+  identification?: null;
+  invoice_id?: string;
+  LR?: string;
+  method?: string;
+  token?: string;
+  customer_payment_method_id?: string;
+  restrict_payment_method?: boolean;
+  customer_id?: string;
+  email?: string;
+  months?: number;
+  discount_cents?: number;
+  bank_slip_extra_days?: number;
+  keep_dunning?: boolean;
+  items?: IuguItem[];
+  order_id?: string;
+  payer?: IuguPayer;
 }

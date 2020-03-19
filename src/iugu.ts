@@ -10,6 +10,7 @@ import {
   IuguItem,
   IuguVariable,
   IuguPaymentDiscount,
+  IuguCharge,
   IuguBankSlip,
   IuguPayer,
   IuguLog,
@@ -32,5 +33,6 @@ export {
   IuguItem,
   IuguVariable,
   IuguLog,
+  IuguCharge,
   IuguUtils
 }

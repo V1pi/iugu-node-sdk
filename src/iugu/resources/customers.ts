@@ -17,40 +17,40 @@ class IuguCustomers extends IuguCommon<IuguClient> {
   async createPaymentMethod (data: string | object, urlParams: Map<string, string> | undefined): Promise<IuguPaymentMethod> {
     return IuguMethods.createIuguMethod<IuguPaymentMethod>({
       method: 'post',
-      path: '/{customerId}/payment_methods',
-      urlParams: ['customerId']
+      path: '/' + this.routeName + '/{customer_id}/payment_methods',
+      urlParams: ['customer_id']
     })(data, urlParams)
   }
 
   async listPaymentMethod (data: string | object, urlParams: Map<string, string> | undefined): Promise<IuguPaymentMethod> {
     return IuguMethods.createIuguMethod<IuguPaymentMethod>({
       method: 'get',
-      path: '/{customerId}/payment_methods',
-      urlParams: ['customerId']
+      path: '/' + this.routeName + '/{customer_id}/payment_methods',
+      urlParams: ['customer_id']
     })(data, urlParams)
   }
 
   async retrievePaymentMethod (data: string | object, urlParams: Map<string, string> | undefined): Promise<IuguPaymentMethod> {
     return IuguMethods.createIuguMethod<IuguPaymentMethod>({
       method: 'get',
-      path: '/{customerId}/payment_methods/{paymentMethodId}',
-      urlParams: ['customerId', 'paymentMethodId']
+      path: '/' + this.routeName + '/{customer_id}/payment_methods/{paymentMethodId}',
+      urlParams: ['customer_id', 'paymentMethodId']
     })(data, urlParams)
   }
 
   async updatePaymentMethod (data: string | object, urlParams: Map<string, string> | undefined): Promise<IuguPaymentMethod> {
     return IuguMethods.createIuguMethod<IuguPaymentMethod>({
       method: 'post',
-      path: '/{customerId}/payment_methods/{paymentMethodId}',
-      urlParams: ['customerId', 'paymentMethodId']
+      path: '/' + this.routeName + '/{customer_id}/payment_methods/{paymentMethodId}',
+      urlParams: ['customer_id', 'paymentMethodId']
     })(data, urlParams)
   }
 
   async deletePaymentMethod (data: string | object, urlParams: Map<string, string> | undefined): Promise<IuguPaymentMethod> {
     return IuguMethods.createIuguMethod<IuguPaymentMethod>({
       method: 'delete',
-      path: '/{customerId}/payment_methods/{paymentMethodId}',
-      urlParams: ['customerId', 'paymentMethodId']
+      path: '/' + this.routeName + '/{customer_id}/payment_methods/{paymentMethodId}',
+      urlParams: ['customer_id', 'paymentMethodId']
     })(data, urlParams)
   }
 

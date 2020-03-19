@@ -2,26 +2,27 @@
   "name": "iugu-node-sdk",
   "version": "0.0.1",
   "description": "Biblioteca não-oficial da API Iugu para Node.js feita em Typescript",
-  "main": "./lib/iugu.js",
-  "types": "./lib/iugu.d.ts",
+  "main": "lib/iugu.js",
+  "types": "lib/iugu.d.ts",
   "scripts": {
     "test": "jest --no-cache --detectOpenHandles",
     "doc": "npx typedoc --out ./docs --mode file ./lib",
     "build": "npx tsc -p ./tsconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test",
-    "version": "git add -A src",
-    "postversion": "git push && git push --tags"
+    "prepublishOnly": "npm test"
   },
   "keywords": [
     "iugu",
     "sdk"
   ],
+  "files": [
+    "lib"
+  ],
   "author": {
     "name": "Vinicius Picanco",
     "email": "viniciusspicanco@gmail.com"
   },
-  "license": "GPL-3.0",
+  "license": "BSD-3-Clause",
   "devDependencies": {
     "@babel/parser": "^7.8.4",
     "@babel/types": "^7.8.3",

@@ -2,11 +2,15 @@
 
 Com o objetivo de fornecer um SDK Node para acesso a API da Iugu de forma fácil e tipada.
 
+Para instalar a biblioteca:
+
+`npm install iugu-node-sdk`
+
 ## Como usar
 
 Com sua API key gerada pela plataformada da Iugu inicialize o sdk:
 ```ts
-import Iugu, { IuguClient } from 'iugu'
+import Iugu, { IuguClient } from 'iugu-node-sdk'
 
 Iugu.setApiKey('<SUA API KEY>')
 ```

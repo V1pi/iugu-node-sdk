@@ -54,9 +54,10 @@ test('should create token', async () => {
 })
 
 test('should create invoice', async () => {
+  const date = new Date()
   const invoice: IuguInvoice = {
     email: 'teste@teste.com',
-    due_date: '2020-03-19',
+    due_date: date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate(),
     items: [
       {
         description: 'Alcool em gel',
@@ -105,9 +106,10 @@ test('should create payment methods', async () => {
 })
 
 test('should create charge', async () => {
+  const date = new Date()
   const invoice: IuguInvoice = {
     email: 'teste@teste.com',
-    due_date: '2020-03-19',
+    due_date: date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate(),
     items: [
       {
         description: 'Alcool em gel',

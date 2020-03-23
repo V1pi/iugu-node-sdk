@@ -1,6 +1,6 @@
 {
   "name": "iugu-node-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Biblioteca não-oficial da API Iugu para Node.js feita em Typescript",
   "main": "lib/iugu.js",
   "types": "lib/iugu.d.ts",

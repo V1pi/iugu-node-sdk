@@ -9,7 +9,8 @@
     "doc": "npx typedoc --out ./docs --mode file ./lib",
     "build": "npx tsc -p ./tsconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test"
+    "prepublishOnly": "npm test",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",

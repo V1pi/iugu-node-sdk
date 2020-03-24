@@ -14,7 +14,21 @@ import {
   IuguBankSlip,
   IuguPayer,
   IuguLog,
-  IuguAddress
+  IuguAddress,
+  IuguAccount,
+  IuguCommissions,
+  IuguConfigAccount,
+  IuguConfigAccountBankSlip,
+  IuguConfiguration,
+  IuguConfigAccountCreditCard,
+  IuguEarlyPaymentDiscount,
+  IuguInformation,
+  IuguVerificationAccount,
+  IuguVerificationData,
+  IuguInfoAccount,
+  IuguLastVerificationRequestData,
+  IuguWithdrawRequest,
+  IuguCustomVariable
 } from './iugu/models'
 import IuguUtils from './iugu/utils'
 export default Iugu
@@ -34,5 +48,19 @@ export {
   IuguVariable,
   IuguLog,
   IuguCharge,
-  IuguUtils
+  IuguUtils,
+  IuguAccount,
+  IuguCommissions,
+  IuguConfigAccount,
+  IuguConfigAccountBankSlip,
+  IuguConfiguration,
+  IuguConfigAccountCreditCard,
+  IuguEarlyPaymentDiscount,
+  IuguInformation,
+  IuguVerificationAccount,
+  IuguVerificationData,
+  IuguInfoAccount,
+  IuguLastVerificationRequestData,
+  IuguWithdrawRequest,
+  IuguCustomVariable
 }

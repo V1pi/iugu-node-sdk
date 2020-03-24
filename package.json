@@ -11,6 +11,11 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm test"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/V1pi/iugu-node-sdk.git"
+  },
+  "bugs:": "https://github.com/V1pi/iugu-node-sdk/issues",
   "keywords": [
     "iugu",
     "sdk"

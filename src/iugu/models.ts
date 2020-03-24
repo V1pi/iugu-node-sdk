@@ -237,3 +237,199 @@ export interface IuguCharge {
   order_id?: string;
   payer?: IuguPayer;
 }
+
+export interface IuguAccount {
+  name?: string;
+  commissions?: IuguCommissions;
+  commission_percent?: string;
+  account_id?: string;
+  live_api_token?: string;
+  test_api_token?: string;
+  user_token?: string;
+}
+
+export interface IuguCommissions {
+  percent?: string;
+  credit_card_percent?: string;
+  bank_slip_percent?: string;
+  cents?: number;
+  credit_card_cents?: number;
+  bank_slip_cents?: number;
+}
+
+export interface IuguConfigAccount {
+  commissions?: IuguCommissions;
+  auto_withdraw?: boolean;
+  fines?: string;
+  per_day_interest?: string;
+  late_payment_fine?: number;
+  auto_advance?: string;
+  auto_advance_type?: string;
+  auto_advance_option?: number;
+  bank_slip?: IuguConfigAccountBankSlip;
+  credit_card?: IuguConfigAccountCreditCard;
+  payment_email_notification?: string;
+  payment_email_notification_receiver?: string;
+  early_payment_discount?: string;
+  early_payment_discounts?: IuguEarlyPaymentDiscount[];
+  id?: string;
+  name?: string;
+  created_at?: Date;
+  updated_at?: Date;
+  'can_receive?'?: boolean;
+  'is_verified?'?: boolean;
+  last_verification_request_status?: string;
+  last_verification_request_data?: null;
+  last_verification_request_feedback?: null;
+  change_plan_type?: number;
+  subscriptions_trial_period?: number;
+  disable_emails?: boolean;
+  last_withdraw?: null;
+  total_subscriptions?: number;
+  reply_to?: null;
+  webapp_on_test_mode?: boolean;
+  marketplace?: boolean;
+  default_return_url?: string;
+  balance?: string;
+  protected_balance?: string;
+  payable_balance?: string;
+  receivable_balance?: string;
+  commission_balance?: string;
+  volume_last_month?: string;
+  volume_this_month?: string;
+  taxes_paid_last_month?: string;
+  taxes_paid_this_month?: string;
+  custom_logo_url?: null;
+  custom_logo_small_url?: null;
+  informations?: IuguInformation[];
+  configuration?: IuguConfiguration;
+}
+
+export interface IuguConfigAccountBankSlip {
+  active?: string;
+  extra_due?: number;
+  reprint_extra_due?: number;
+}
+
+export interface IuguConfiguration {
+  commission_percent?: number;
+  bank_slip?: IuguConfigAccountBankSlip;
+  credit_card?: IuguConfigAccountCreditCard;
+}
+
+export interface IuguConfigAccountCreditCard {
+  active?: string;
+  soft_descriptor?: string;
+  installments?: string;
+  max_installments?: number;
+  max_installments_without_interest?: number;
+  two_step_transaction?: string;
+  installments_pass_interest?: string;
+}
+
+export interface IuguEarlyPaymentDiscount {
+  days?: number;
+  percent?: string;
+}
+
+export interface IuguInformation {
+  key?: string;
+  value?: string;
+}
+
+export interface IuguVerificationAccount {
+  data?: IuguVerificationData;
+  id?: string;
+  account_id?: string;
+  created_at?: Date;
+}
+
+export interface IuguVerificationData {
+  price_range?: string;
+  physical_products?: string;
+  business_type?: string;
+  person_type?: string;
+  automatic_transfer?: string;
+  cpf?: string;
+  name?: string;
+  address?: string;
+  cep?: string;
+  city?: string;
+  state?: string;
+  telephone?: string;
+  bank?: string;
+  bank_ag?: string;
+  account_type?: string;
+  bank_cc?: string;
+  document_id?: number;
+  document_cpf?: number;
+  document_activity?: number;
+}
+
+export interface IuguInfoAccount {
+  id?: string;
+  name?: string;
+  created_at?: Date;
+  updated_at?: Date;
+  'can_receive?'?: boolean;
+  'is_verified?'?: boolean;
+  last_verification_request_status?: string;
+  last_verification_request_data?: IuguLastVerificationRequestData;
+  last_verification_request_feedback?: null;
+  change_plan_type?: number;
+  subscriptions_trial_period?: number;
+  disable_emails?: boolean;
+  last_withdraw?: null;
+  total_subscriptions?: number;
+  reply_to?: null;
+  webapp_on_test_mode?: boolean;
+  marketplace?: boolean;
+  auto_withdraw?: boolean;
+  balance?: string;
+  balance_available_for_withdraw?: string;
+  balance_in_protest?: string;
+  protected_balance?: string;
+  payable_balance?: string;
+  receivable_balance?: string;
+  commission_balance?: string;
+  volume_last_month?: string;
+  volume_this_month?: string;
+  taxes_paid_last_month?: string;
+  taxes_paid_this_month?: string;
+  custom_logo_url?: null;
+  custom_logo_small_url?: null;
+  informations?: IuguInformation[];
+}
+
+export interface IuguLastVerificationRequestData {
+  price_range?: string;
+  physical_products?: string;
+  business_type?: string;
+  person_type?: string;
+  automatic_transfer?: string;
+  cpf?: string;
+  name?: string;
+  address?: string;
+  cep?: string;
+  city?: string;
+  state?: string;
+  telephone?: string;
+  bank?: string;
+  bank_ag?: string;
+  account_type?: string;
+  bank_cc?: string;
+  document_id?: string;
+  document_cpf?: string;
+  document_activity?: string;
+}
+
+export interface IuguWithdrawRequest {
+  id?: string;
+  amount?: number;
+  custom_variables?: IuguCustomVariable[];
+}
+
+export interface IuguCustomVariable {
+  name?: string;
+  value?: string;
+}

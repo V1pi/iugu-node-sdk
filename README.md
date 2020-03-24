@@ -15,7 +15,7 @@ import Iugu, { IuguClient } from 'iugu-node-sdk'
 Iugu.setApiKey('<SUA API KEY>')
 ```
 Existe alguns models que foram criados para padronizar as respostas e requisição para a API.
-Um exemplo de utilização da API para criação de um cliente:
+Um exemplo de utilização da API em TypeScript para criação de um cliente:
 ```ts
 const client: IuguClient = {
     name: 'Vinicius Picanco',
@@ -79,4 +79,4 @@ Se for contribuir sempre crie e execute os testes:
 
 ## Créditos
 
-Escrito por [Vinícius Picanço](https://github.com/V1pi) (viniciusspicanco@gmail.com).
+Escrito por [Vinícius Picanço](https://github.com/V1pi) (viniciusspicanco@gmail.com). Contribua ˆˆ

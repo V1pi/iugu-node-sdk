@@ -1,3 +1,5 @@
+0.0.4 April 07, 2020
+  - Added query params support
 0.0.3 March 24, 2020
   - New models (IuguAccount, IuguCommissions, IuguConfigAccount, IuguConfigAccountBankSlip, IuguConfiguration, IuguConfigAccountCreditCard, IuguEarlyPaymentDiscount, IuguInformation, IuguVerificationAccount, IuguVerificationData, IuguInfoAccount, IuguLastVerificationRequestData, IuguWithdrawRequest, IuguCustomVariable)
   - Added new method for Accounts resource called 'requestConfiguration'

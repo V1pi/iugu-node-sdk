@@ -17,13 +17,15 @@ class IuguMethods {
     method: IuguMethod
   ): (
     data: string | object,
-    urlParams: Map<string, string> | undefined
+    urlParams?: Map<string, string> | undefined,
+    queryParams?: Map<string, string> | undefined
   ) => Promise<T> {
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     const self = this
     return async function (
       data: string | object,
-      urlParams: Map<string, string> | undefined
+      urlParams?: Map<string, string> | undefined,
+      queryParams?: Map<string, string> | undefined
     ): Promise<T> {
       if (!self.apiKey) {
         throw new Error('Você deve chamar setApiKey')
@@ -39,6 +41,7 @@ class IuguMethods {
 
         throw new Error('Você deve passar todos os parâmetros de URL')
       }
+
       if (data instanceof Object) {
         if (method.checkErrors !== undefined) {
           method.checkErrors(data)
@@ -47,7 +50,10 @@ class IuguMethods {
       }
       const params: Map<string, string> = urlParams || new Map()
       const path = IuguUtils.interpolateURL(method.path, params)
-      const fullURL = self.url + path
+      let fullURL = self.url + path
+      if (queryParams !== undefined && queryParams.size !== 0) {
+        fullURL += IuguUtils.interpolateQueryParams(queryParams)
+      }
       const configs: axios.AxiosRequestConfig = {
         auth: {
           username: self.apiKey,

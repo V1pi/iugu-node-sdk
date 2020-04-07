@@ -49,6 +49,17 @@ class IuguUtils {
       return data.get(args[0]) || substring
     })
   }
+
+  interpolateQueryParams (params: Map<string, string>): string {
+    let qs = '?'
+    params.forEach((value, key) => {
+      qs += key + '=' + value + '&'
+    })
+
+    qs = qs.substring(0, qs.length - 1)
+
+    return qs
+  }
 }
 
 export default new IuguUtils()

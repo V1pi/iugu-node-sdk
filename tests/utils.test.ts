@@ -23,3 +23,11 @@ test('test interpolate url', () => {
   expect(IuguUtils.interpolateURL('/{param1}/{param5}', urlParams)).toBe('/teste/banana')
   expect(IuguUtils.interpolateURL('/teste/teste', urlParams)).toBe('/teste/teste')
 })
+
+test('test interpolate query params', () => {
+  const urlParams: Map<string, string> = new Map()
+  urlParams.set('param1', 'teste')
+  urlParams.set('param5', 'banana')
+
+  expect(IuguUtils.interpolateQueryParams(urlParams)).toBe('?param1=teste&param5=banana')
+})

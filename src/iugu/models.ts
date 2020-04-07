@@ -49,15 +49,15 @@ export interface IuguCreditCard {
   month: string;
   year: string;
   brand?: string;
-  holderName?: string;
-  displayNumber?: string;
+  holder_name?: string;
+  display_number?: string;
   bin?: string;
 }
 
 export interface IuguCreditCardExtraInfo {
   brand?: string;
-  holderName?: string;
-  displayNumber?: string;
+  holder_name?: string;
+  display_number?: string;
   bin?: string;
   month?: string;
   year?: string;

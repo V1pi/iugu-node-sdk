@@ -30,4 +30,8 @@ test('test interpolate query params', () => {
   urlParams.set('param5', 'banana')
 
   expect(IuguUtils.interpolateQueryParams(urlParams)).toBe('?param1=teste&param5=banana')
+  urlParams.clear()
+  urlParams.set('paid_at_from', '2019-01-30T00:00:00-03:00')
+  urlParams.set('paid_at_to', '2020-04-30T00:00:00-03:00')
+  expect(IuguUtils.interpolateQueryParams(urlParams)).toBe('?paid_at_from=2019-01-30T00%3A00%3A00-03%3A00&paid_at_to=2020-04-30T00%3A00%3A00-03%3A00')
 })

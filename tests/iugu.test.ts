@@ -8,19 +8,30 @@ interface IuguServices {
   apiKey: string;
   clientId: string;
   paymentMethodToken: string;
+  subApiKey: string;
 }
 
 let iuguServices: IuguServices = {
   accountId: '',
   apiKey: '',
   clientId: '',
-  paymentMethodToken: ''
+  paymentMethodToken: '',
+  subApiKey: ''
 }
 
 beforeAll(() => {
   const file = fs.readFileSync(path.join(__dirname, 'iugu_services.json'), 'utf8')
   iuguServices = JSON.parse(file)
   Iugu.setApiKey(iuguServices.apiKey)
+})
+
+test('should list invoices', async () => {
+  const urlParams: Map<string, string> = new Map()
+  urlParams.set('paid_at_from', '2019-01-30T00:00:00-03:00')
+  urlParams.set('paid_at_to', '2020-04-30T00:00:00-03:00')
+
+  const resultInvoices = await Iugu.invoices.list('', undefined, urlParams) as any
+  expect(resultInvoices.totalItems).toBeDefined()
 })
 
 test('should create client', async () => {

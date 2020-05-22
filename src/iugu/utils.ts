@@ -53,7 +53,7 @@ class IuguUtils {
   interpolateQueryParams (params: Map<string, string>): string {
     let qs = '?'
     params.forEach((value, key) => {
-      qs += key + '=' + value + '&'
+      qs += encodeURIComponent(key) + '=' + encodeURIComponent(value) + '&'
     })
 
     qs = qs.substring(0, qs.length - 1)

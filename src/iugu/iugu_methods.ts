@@ -36,10 +36,7 @@ class IuguMethods {
         (urlParams !== undefined &&
           !method.urlParams.every(param => urlParams.get(param) != null))
       ) {
-        console.log(urlParams.keys())
-        console.log(method.urlParams)
-
-        throw new Error('Você deve passar todos os parâmetros de URL')
+        throw new Error('Você deve passar todos os parâmetros de URL. Esperado: ' + urlParams.keys() + ' Recebido: ' + method.urlParams)
       }
 
       if (data instanceof Object) {

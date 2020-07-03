@@ -13,7 +13,7 @@ class IuguSubscriptions extends IuguCommon<any> {
   async activate (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<any> {
     return IuguMethods.createIuguMethod<any>({
       method: 'post',
-      path: '/' + this.routeName + '/{subscription_id}/active',
+      path: '/' + this.routeName + '/{subscription_id}/activate',
       urlParams: ['subscription_id']
     })(data, urlParams)
   }

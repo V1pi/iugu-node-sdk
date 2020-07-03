@@ -12,7 +12,7 @@ abstract class IuguCommon<T> {
 
   async update (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<T> {
     return IuguMethods.createIuguMethod<T>({
-      method: 'post',
+      method: 'put',
       path: '/' + this.routeName + '/{id}',
       urlParams: ['id'],
       checkErrors: this.checkUpdate

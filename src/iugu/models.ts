@@ -183,6 +183,66 @@ export interface IuguInvoice {
   logs?: IuguLog[];
 }
 
+export interface IuguSubscription {
+  id?: string;
+  suspended?: boolean;
+  plan_identifier?: string;
+  price_cents?: number;
+  only_on_charge_success?: boolean;
+  ignore_due_email?: boolean;
+  payable_with?: string;
+  two_step?: boolean;
+  suspend_on_invoice_expired?: boolean;
+  only_charge_on_due_date?: boolean;
+  currency?: string;
+  features?: Features;
+  expires_at?: Date | string;
+  created_at?: Date | string;
+  updated_at?: Date | string;
+  customer_name?: string;
+  customer_email?: string;
+  quantity?: number;
+  cycled_at?: any;
+  credits_min?: number;
+  credits_cycle?: any;
+  customer_id?: string;
+  plan_name?: string;
+  customer_ref?: string;
+  plan_ref?: string;
+  active?: boolean;
+  in_trial?: any;
+  credits?: number;
+  credits_based?: boolean;
+  recent_invoices?: any;
+  subitems?: Subitem[];
+  logs?: Log[];
+  custom_variables?: any[];
+}
+interface Feat {
+  name: string;
+  value: number;
+}
+
+interface Features {
+  feat: Feat;
+}
+
+interface Subitem {
+  id: string;
+  description: string;
+  quantity: number;
+  price_cents: number;
+  price: string;
+  total: string;
+}
+
+interface Log {
+  id: string;
+  description: string;
+  notes: string;
+  created_at: Date;
+}
+
 export interface IuguPayer {
   cpf_cnpj?: string;
   name?: string;

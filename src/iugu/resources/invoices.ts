@@ -19,6 +19,14 @@ class IuguInvoices extends IuguCommon<IuguInvoice> {
     })(data, urlParams)
   }
 
+  async capture (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<IuguInvoice> {
+    return IuguMethods.createIuguMethod<IuguInvoice>({
+      method: 'post',
+      path: '/' + this.routeName + '/{invoice_id}/capture',
+      urlParams: ['invoice_id']
+    })(data, urlParams)
+  }
+
   get routeName (): string {
     return 'invoices'
   }

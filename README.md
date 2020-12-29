@@ -10,23 +10,23 @@ Para instalar a biblioteca:
 
 Com sua API key gerada pela plataformada da Iugu inicialize o sdk:
 ```ts
-import Iugu, { IuguClient } from 'iugu-node-sdk'
+import Iugu, { IuguCustomer } from 'iugu-node-sdk'
 
 Iugu.setApiKey('<SUA API KEY>')
 ```
 Existe alguns models que foram criados para padronizar as respostas e requisição para a API.
 Um exemplo de utilização da API em TypeScript para criação de um cliente:
 ```ts
-const client: IuguClient = {
+const client: IuguCustomer = {
     name: 'Vinicius Picanco',
     email: 'teste@teste.com'
 }
 
 // Pode ser utilizar com await
-const resultClient : IuguClient = await Iugu.customers.create(client, undefined)
+const resultClient : IuguCustomer = await Iugu.customers.create(client, undefined)
 
 // Ou
-Iugu.customers.create(client, undefined).then((cli: IuguClient) => {
+Iugu.customers.create(client, undefined).then((cli: IuguCustomer) => {
     // On success
 }).catch((error: Error) => {
     // On error
@@ -38,7 +38,7 @@ Todas os métodos seguem o parametro de Iugu._{recurso}_._{método}_(_model_,_ur
 Os parâmetros de URL devem ser passados pelo segundo parâmetro dos métodos, da seguinte forma:
 
 ```ts
-const client: IuguClient = {
+const client: IuguCustomer = {
     name: 'Vinicius Picanco',
     email: 'teste@teste.com'
 }
@@ -47,10 +47,10 @@ const urlParams: Map<string, string> = new Map()
 urlParams.set('id', '558958DB714B389EA6B1FF0A33D75505')
 
 // Pode ser utilizar com await
-const resultClient : IuguClient = await Iugu.customers.update(client, urlParams)
+const resultClient : IuguCustomer = await Iugu.customers.update(client, urlParams)
 
 // Ou
-Iugu.customers.create(client, urlParams).then((cli: IuguClient) => {
+Iugu.customers.create(client, urlParams).then((cli: IuguCustomer) => {
     // On success
 }).catch((error: Error) => {
     // On error

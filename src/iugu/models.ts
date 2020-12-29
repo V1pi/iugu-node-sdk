@@ -1,6 +1,30 @@
 import { Method } from 'axios'
 
+/**
+ * @deprecated Please use IuguCustomer interface
+ */
 export interface IuguClient {
+  id?: string;
+  email: string;
+  name: string;
+  notes?: string;
+  phone?: number;
+  phone_prefix?: number;
+  cpf_cnpj?: string;
+  cc_emails?: string;
+  zip_code?: string;
+  number?: string;
+  street?: string;
+  city?: string;
+  state?: string;
+  district?: string;
+  complement?: string;
+  custom_variables?: [];
+  created_at?: Date;
+  updated_at?: Date;
+}
+
+export interface IuguCustomer {
   id?: string;
   email: string;
   name: string;

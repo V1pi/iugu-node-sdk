@@ -1,10 +1,10 @@
 import IuguCommon from './common'
 
 import IuguMethods from '../iugu_methods'
-import { IuguClient, IuguPaymentMethod } from '../models'
+import { IuguCustomer, IuguPaymentMethod } from '../models'
 
-class IuguCustomers extends IuguCommon<IuguClient> {
-  checkCreate (obj: IuguClient): void {
+class IuguCustomers extends IuguCommon<IuguCustomer> {
+  checkCreate (obj: IuguCustomer): void {
     if (obj.email === '') {
       throw new Error('É obrigatorio que haja um email')
     }

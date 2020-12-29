@@ -79,4 +79,6 @@ Se for contribuir sempre crie e execute os testes:
 
 ## Créditos
 
-Escrito por [Vinícius Picanço](https://github.com/V1pi) (viniciusspicanco@gmail.com). Contribua ˆˆ
+Escrito por [Vinícius Picanço](https://github.com/V1pi) (viniciusspicanco@gmail.com).<br>
+Agradeço a contribuição de:
+- [kurybr](https://github.com/kurybr)

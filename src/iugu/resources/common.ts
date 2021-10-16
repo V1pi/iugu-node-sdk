@@ -1,4 +1,5 @@
 import IuguMethods from '../iugu_methods'
+import {IuguListReturn} from '../models'
 
 abstract class IuguCommon<T> {
   async create (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<T> {
@@ -10,7 +11,7 @@ abstract class IuguCommon<T> {
     })(data, urlParams)
   }
 
-  async update (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<T> {
+  async update(data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<T> {
     return IuguMethods.createIuguMethod<T>({
       method: 'put',
       path: '/' + this.routeName + '/{id}',
@@ -19,8 +20,8 @@ abstract class IuguCommon<T> {
     })(data, urlParams)
   }
 
-  async list (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<T> {
-    return IuguMethods.createIuguMethod<T>({
+  async list(data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<IuguListReturn<T>> {
+    return IuguMethods.createIuguMethod<IuguListReturn<T>>({
       method: 'get',
       path: '/' + this.routeName,
       urlParams: [],
@@ -28,7 +29,7 @@ abstract class IuguCommon<T> {
     })(data, urlParams, queryParams)
   }
 
-  async retrieve (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<T> {
+  async retrieve(data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<T> {
     return IuguMethods.createIuguMethod<T>({
       method: 'get',
       path: '/' + this.routeName + '/{id}',

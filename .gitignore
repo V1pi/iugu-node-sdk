@@ -9,3 +9,5 @@ npm-debug.log
 docs
 dist
 lib
+
+.idea

@@ -1,4 +1,4 @@
-import { Method } from 'axios'
+import {Method} from 'axios'
 
 /**
  * @deprecated Please use IuguCustomer interface
@@ -516,4 +516,10 @@ export interface IuguWithdrawRequest {
 export interface IuguCustomVariable {
   name?: string;
   value?: string;
+}
+
+export interface IuguListReturn<T> {
+  facets: Record<string, { _type: string; count: 0 }>;
+  totalItems: number;
+  items: T[];
 }

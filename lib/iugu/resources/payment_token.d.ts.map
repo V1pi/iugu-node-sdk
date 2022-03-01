@@ -1,1 +1,0 @@
-{"version":3,"file":"payment_token.d.ts","sourceRoot":"","sources":["../../../src/iugu/resources/payment_token.ts"],"names":[],"mappings":"AAAA,OAAO,UAAU,MAAM,UAAU,CAAA;AACjC,OAAO,EAAE,gBAAgB,EAAE,MAAM,WAAW,CAAA;AAG5C,cAAM,kBAAmB,SAAQ,UAAU,CAAC,gBAAgB,CAAC;IAC3D,WAAW,CAAE,GAAG,EAAE,gBAAgB,GAAG,IAAI;IAMzC,IAAI,SAAS,IAAK,MAAM,CAEvB;CACF;;AAED,wBAAuC"}

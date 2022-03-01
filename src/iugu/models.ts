@@ -433,3 +433,21 @@ export interface IuguCustomVariable {
   name?: string;
   value?: string;
 }
+
+export interface FinancialTransaction { 
+  id?: string;
+  description?: string;
+  scheduled_date?: string;
+  installment?: number;
+  status?: string;
+  invoice_id?: string;
+  customer_ref?: string;
+  total?: string;
+  taxes?: string;
+  client_share?: string;
+  commission?: string;
+  number_of_installments?: string;
+  created_at?: string;
+  updated_at?: string;
+  executed_date?: string;
+}

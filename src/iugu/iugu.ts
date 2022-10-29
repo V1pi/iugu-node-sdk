@@ -51,9 +51,6 @@ class Iugu {
     return IuguFinancialTransactionRequests
   }
 
-
-  
-
   setApiKey (apikey: string): void {
     IuguMethods.setApiKey(apikey)
   }

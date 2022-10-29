@@ -10,14 +10,14 @@ class IuguFinancialTransactionRequests {
     })(data, urlParams, queryParams)
   }
 
-  async FinancialTransactionRequestsSimulationPerInstallment(data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<FinancialTransactionSimulationPerInstallments> {
+  async FinancialTransactionRequestsSimulationPerInstallment (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<FinancialTransactionSimulationPerInstallments> {
     return IuguMethods.createIuguMethod<FinancialTransactionSimulationPerInstallments>({
       method: 'get',
       path: '/' + this.routeName + '/advance_simulation',
       urlParams: []
     })(data, urlParams, queryParams)
   }
-  
+
   async FinancialTransactionRequestsExecutePerInstallment (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<FinancialTransactionExecutePerInstallments> {
     return IuguMethods.createIuguMethod<FinancialTransactionExecutePerInstallments>({
       method: 'post',

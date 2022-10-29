@@ -517,3 +517,58 @@ export interface IuguCustomVariable {
   name?: string;
   value?: string;
 }
+
+export interface FinancialTransaction { 
+  id?: string;
+  description?: string;
+  scheduled_date?: string;
+  installment?: number;
+  status?: string;
+  invoice_id?: string;
+  customer_ref?: string;
+  total?: string;
+  taxes?: string;
+  client_share?: string;
+  commission?: string;
+  number_of_installments?: string;
+  created_at?: string;
+  updated_at?: string;
+  executed_date?: string;
+}
+
+export interface FinancialTransactionSimulationPerInstallments { 
+  id?: string;
+  description?: string;
+  scheduled_date?: string;
+  invoice_id?: string;
+  customer_ref?: string;
+  total?: string;
+  taxes?: string;
+  client_share?: string;
+  commission?: string;
+  number_of_installments?: string;
+  installment?: number;
+  advanced_value?: number;
+  advanced_fee?: number;
+  received_value?: number;
+}
+
+export interface FinancialTransactionExecutePerInstallments { 
+  transactions: [
+    { 
+      id?: number, 
+      advanced_value?: string;
+      advanced_fee?: string;
+      received_value?: string;
+    }
+  ],
+  total?: {
+    advanced_value?: string;
+    advanced_fee?: string;
+    received_value?: string;
+  },
+  errors?: {
+    transactions?: string,
+    internal_error?: string, 
+  }
+}

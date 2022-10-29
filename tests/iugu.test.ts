@@ -56,7 +56,7 @@ test('should create token', async () => {
       first_name: 'Vinicius',
       last_name: 'Picanco',
       month: '07',
-      year: '2021'
+      year: '2030'
     }
   }
   const resultPayment = await Iugu.paymentToken.create(payment, undefined)
@@ -100,7 +100,7 @@ test('should create payment methods', async () => {
       first_name: 'Vinicius',
       last_name: 'Picanco',
       month: '07',
-      year: '2021'
+      year: '2030'
     }
   }
   const resultPayment = await Iugu.paymentToken.create(payment, undefined)

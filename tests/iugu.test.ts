@@ -26,11 +26,10 @@ beforeAll(() => {
 })
 
 test('should list invoices', async () => {
-  const urlParams: Map<string, string> = new Map()
-  urlParams.set('paid_at_from', '2019-01-30T00:00:00-03:00')
-  urlParams.set('paid_at_to', '2020-04-30T00:00:00-03:00')
-
-  const resultInvoices = await Iugu.invoices.list('', undefined, urlParams) as any
+  const resultInvoices = await Iugu.invoices.list('', undefined, {
+    paid_at_from: '2019-01-30T00:00:00-03:00',
+    paid_at_to: '2020-04-30T00:00:00-03:00'
+  }) as any
   expect(resultInvoices.totalItems).toBeDefined()
 })
 
@@ -56,7 +55,7 @@ test('should create token', async () => {
       first_name: 'Vinicius',
       last_name: 'Picanco',
       month: '07',
-      year: '2021'
+      year: '2030'
     }
   }
   const resultPayment = await Iugu.paymentToken.create(payment, undefined)
@@ -100,7 +99,7 @@ test('should create payment methods', async () => {
       first_name: 'Vinicius',
       last_name: 'Picanco',
       month: '07',
-      year: '2021'
+      year: '2030'
     }
   }
   const resultPayment = await Iugu.paymentToken.create(payment, undefined)
@@ -110,9 +109,9 @@ test('should create payment methods', async () => {
     token: resultPayment.id,
     set_as_default: false
   }
-  const urlParams: Map<string, string> = new Map()
-  urlParams.set('customer_id', iuguServices.clientId)
-  const resultPaymentMethod = await Iugu.customers.createPaymentMethod(paymetMethod, urlParams)
+  const resultPaymentMethod = await Iugu.customers.createPaymentMethod(paymetMethod, {
+    customer_id: iuguServices.clientId
+  })
   expect(resultPaymentMethod.id).toBeDefined()
 })
 

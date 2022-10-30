@@ -17,19 +17,22 @@ class IuguMethods {
     method: IuguMethod
   ): (
     data: string | object,
-    urlParams?: Map<string, string> | undefined,
-    queryParams?: Map<string, string> | undefined
+    urlParams?: Map<string, string> | object,
+    queryParams?: Map<string, string> | object
   ) => Promise<T> {
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     const self = this
     return async function (
       data: string | object,
-      urlParams?: Map<string, string> | undefined,
-      queryParams?: Map<string, string> | undefined
+      urlParamsArg?: Map<string, string> | object,
+      queryParamsArg?: Map<string, string> | object
     ): Promise<T> {
       if (!self.apiKey) {
         throw new Error('Você deve chamar setApiKey')
       }
+
+      const urlParams = IuguUtils.convertToMap(urlParamsArg)
+      const queryParams = IuguUtils.convertToMap(queryParamsArg)
 
       if (
         (urlParams !== undefined && !method.urlParams) ||

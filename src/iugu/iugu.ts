@@ -8,6 +8,7 @@ import IuguMarketPlaces from './resources/marketplaces'
 import IuguPlans from './resources/plans'
 import IuguSubscriptions from './resources/subscriptions'
 import IuguTransfers from './resources/transfers'
+import IuguFinancialTransactionRequests from './resources/financial_transaction_requests'
 
 class Iugu {
   public get customers (): typeof IuguCustomers {
@@ -44,6 +45,10 @@ class Iugu {
 
   public get transfers (): typeof IuguTransfers {
     return IuguTransfers
+  }
+
+  public get financialTransactionsRequests (): typeof IuguFinancialTransactionRequests {
+    return IuguFinancialTransactionRequests
   }
 
   setApiKey (apikey: string): void {

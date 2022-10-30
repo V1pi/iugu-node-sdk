@@ -49,6 +49,12 @@ urlParams.set('id', '558958DB714B389EA6B1FF0A33D75505')
 // Pode ser utilizar com await
 const resultClient : IuguCustomer = await Iugu.customers.update(client, urlParams)
 
+// Ao invés de map pode utilizar o objeto diretamente
+const resultClient : IuguCustomer = await Iugu.customers.update(client,
+  {
+    id: "558958DB714B389EA6B1FF0A33D75505"
+  })
+
 // Ou
 Iugu.customers.create(client, urlParams).then((cli: IuguCustomer) => {
     // On success

@@ -3,7 +3,7 @@ import { IuguInvoice } from '../models'
 import IuguMethods from '../iugu_methods'
 
 class IuguInvoices extends IuguCommon<IuguInvoice> {
-  async cancel (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<IuguInvoice> {
+  async cancel (data: string | object, urlParams?: Map<string, string> | object, queryParams?: Map<string, string> | object): Promise<IuguInvoice> {
     return IuguMethods.createIuguMethod<IuguInvoice>({
       method: 'put',
       path: '/' + this.routeName + '/{invoice_id}/cancel',
@@ -11,7 +11,7 @@ class IuguInvoices extends IuguCommon<IuguInvoice> {
     })(data, urlParams)
   }
 
-  async refund (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<IuguInvoice> {
+  async refund (data: string | object, urlParams?: Map<string, string> | object, queryParams?: Map<string, string> | object): Promise<IuguInvoice> {
     return IuguMethods.createIuguMethod<IuguInvoice>({
       method: 'post',
       path: '/' + this.routeName + '/{invoice_id}/refund',
@@ -19,7 +19,7 @@ class IuguInvoices extends IuguCommon<IuguInvoice> {
     })(data, urlParams)
   }
 
-  async capture (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<IuguInvoice> {
+  async capture (data: string | object, urlParams?: Map<string, string> | object, queryParams?: Map<string, string> | object): Promise<IuguInvoice> {
     return IuguMethods.createIuguMethod<IuguInvoice>({
       method: 'post',
       path: '/' + this.routeName + '/{invoice_id}/capture',
@@ -27,7 +27,7 @@ class IuguInvoices extends IuguCommon<IuguInvoice> {
     })(data, urlParams)
   }
 
-  async duplicate (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<IuguInvoice> {
+  async duplicate (data: string | object, urlParams?: Map<string, string> | object, queryParams?: Map<string, string> | object): Promise<IuguInvoice> {
     return IuguMethods.createIuguMethod<IuguInvoice>({
       method: 'post',
       path: '/' + this.routeName + '/{invoice_id}/duplicate',

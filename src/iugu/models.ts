@@ -523,6 +523,7 @@ export interface IuguListReturn<T> {
   totalItems: number;
   items: T[];
 }
+
 export interface FinancialTransaction { 
   id?: string;
   description?: string;

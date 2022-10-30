@@ -1,4 +1,14 @@
 class IuguUtils {
+  convertToMap (obj?: object | Map<string, string>): Map<string, string> | undefined {
+    if (obj === undefined) {
+      return undefined
+    }
+    if (!(obj instanceof Map)) {
+      return new Map(Object.entries(obj))
+    }
+    return obj
+  }
+
   validateCreditCardNumber (value: string): boolean {
     if (/[^0-9-\s]+/.test(value)) return false
 

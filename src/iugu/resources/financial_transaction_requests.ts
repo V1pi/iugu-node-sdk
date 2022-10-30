@@ -2,7 +2,7 @@ import IuguMethods from '../iugu_methods'
 import { FinancialTransaction, FinancialTransactionSimulationPerInstallments, FinancialTransactionExecutePerInstallments } from '../models'
 
 class IuguFinancialTransactionRequests {
-  async FinancialTransactionList (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<FinancialTransaction> {
+  async FinancialTransactionList (data: string | object, urlParams?: Map<string, string> | object, queryParams?: Map<string, string> | object): Promise<FinancialTransaction> {
     return IuguMethods.createIuguMethod<FinancialTransaction>({
       method: 'get',
       path: '/' + this.routeName,
@@ -10,7 +10,7 @@ class IuguFinancialTransactionRequests {
     })(data, urlParams, queryParams)
   }
 
-  async FinancialTransactionRequestsSimulationPerInstallment (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<FinancialTransactionSimulationPerInstallments> {
+  async FinancialTransactionRequestsSimulationPerInstallment (data: string | object, urlParams?: Map<string, string> | object, queryParams?: Map<string, string> | object): Promise<FinancialTransactionSimulationPerInstallments> {
     return IuguMethods.createIuguMethod<FinancialTransactionSimulationPerInstallments>({
       method: 'get',
       path: '/' + this.routeName + '/advance_simulation',
@@ -18,7 +18,7 @@ class IuguFinancialTransactionRequests {
     })(data, urlParams, queryParams)
   }
 
-  async FinancialTransactionRequestsExecutePerInstallment (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<FinancialTransactionExecutePerInstallments> {
+  async FinancialTransactionRequestsExecutePerInstallment (data: string | object, urlParams?: Map<string, string> | object, queryParams?: Map<string, string> | object): Promise<FinancialTransactionExecutePerInstallments> {
     return IuguMethods.createIuguMethod<FinancialTransactionExecutePerInstallments>({
       method: 'post',
       path: '/' + this.routeName + '/advance',

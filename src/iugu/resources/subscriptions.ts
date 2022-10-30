@@ -3,7 +3,7 @@ import IuguMethods from '../iugu_methods'
 import { IuguSubscription } from '../models'
 
 class IuguSubscriptions extends IuguCommon<IuguSubscription> {
-  async suspend (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<IuguSubscription> {
+  async suspend (data: string | object, urlParams?: Map<string, string> | object, queryParams?: Map<string, string> | object): Promise<IuguSubscription> {
     return IuguMethods.createIuguMethod<IuguSubscription>({
       method: 'post',
       path: '/' + this.routeName + '/{subscription_id}/suspend',
@@ -11,7 +11,7 @@ class IuguSubscriptions extends IuguCommon<IuguSubscription> {
     })(data, urlParams)
   }
 
-  async activate (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<IuguSubscription> {
+  async activate (data: string | object, urlParams?: Map<string, string> | object, queryParams?: Map<string, string> | object): Promise<IuguSubscription> {
     return IuguMethods.createIuguMethod<IuguSubscription>({
       method: 'post',
       path: '/' + this.routeName + '/{subscription_id}/activate',
@@ -19,7 +19,7 @@ class IuguSubscriptions extends IuguCommon<IuguSubscription> {
     })(data, urlParams)
   }
 
-  async changePlan (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<IuguSubscription> {
+  async changePlan (data: string | object, urlParams?: Map<string, string> | object, queryParams?: Map<string, string> | object): Promise<IuguSubscription> {
     return IuguMethods.createIuguMethod<IuguSubscription>({
       method: 'post',
       path: '/' + this.routeName + '/{subscription_id}/change_plan/{plan_identifier}',
@@ -27,7 +27,7 @@ class IuguSubscriptions extends IuguCommon<IuguSubscription> {
     })(data, urlParams)
   }
 
-  async addCredits (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<IuguSubscription> {
+  async addCredits (data: string | object, urlParams?: Map<string, string> | object, queryParams?: Map<string, string> | object): Promise<IuguSubscription> {
     return IuguMethods.createIuguMethod<IuguSubscription>({
       method: 'put',
       path: '/' + this.routeName + '/{subscription_id}/add_credits',
@@ -35,7 +35,7 @@ class IuguSubscriptions extends IuguCommon<IuguSubscription> {
     })(data, urlParams)
   }
 
-  async removeCredits (data: string | object, urlParams?: Map<string, string> | undefined, queryParams?: Map<string, string> | undefined): Promise<IuguSubscription> {
+  async removeCredits (data: string | object, urlParams?: Map<string, string> | object, queryParams?: Map<string, string> | object): Promise<IuguSubscription> {
     return IuguMethods.createIuguMethod<IuguSubscription>({
       method: 'put',
       path: '/' + this.routeName + '/{subscription_id}/remove_credits',

@@ -29,7 +29,7 @@ test('should list invoices', async () => {
   const resultInvoices = await Iugu.invoices.list('', undefined, {
     paid_at_from: '2019-01-30T00:00:00-03:00',
     paid_at_to: '2020-04-30T00:00:00-03:00'
-  }) as any
+  })
   expect(resultInvoices.totalItems).toBeDefined()
 })
 

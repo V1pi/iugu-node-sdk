@@ -88,3 +88,4 @@ Se for contribuir sempre crie e execute os testes:
 Escrito por [Vinícius Picanço](https://github.com/V1pi) (viniciusspicanco@gmail.com).<br>
 Agradeço a contribuição de:
 - [kurybr](https://github.com/kurybr)
+- [renanwilliam](https://github.com/renanwilliam)
